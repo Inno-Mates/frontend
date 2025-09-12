@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Have questions or feedback? We'd love to hear from you.
+            Have questions or feedback? We&apos;d love to hear from you.
           </p>
         </div>
         <form className="mx-auto mt-16 max-w-xl sm:mt-20">
