@@ -1,0 +1,128 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <rect width="800" height="600" fill="#0F172A" />
+  
+  <!-- Grid Pattern -->
+  <g opacity="0.1">
+    <rect x="0" y="0" width="800" height="600" fill="url(#grid-pattern)" />
+  </g>
+  
+  <!-- Glowing Orbs -->
+  <circle cx="200" cy="200" r="100" fill="url(#blue-gradient)" opacity="0.3" filter="url(#blur-filter)" />
+  <circle cx="600" cy="400" r="120" fill="url(#purple-gradient)" opacity="0.3" filter="url(#blur-filter)" />
+  
+  <!-- Abstract Connection Lines -->
+  <path d="M200 250 L400 350 L600 300" stroke="url(#line-gradient)" stroke-width="2" opacity="0.6" />
+  <path d="M150 400 L300 450 L500 420" stroke="url(#line-gradient)" stroke-width="2" opacity="0.6" />
+  
+  <!-- Data Points -->
+  <circle cx="200" cy="250" r="5" fill="#38BDF8" />
+  <circle cx="400" cy="350" r="5" fill="#38BDF8" />
+  <circle cx="600" cy="300" r="5" fill="#38BDF8" />
+  <circle cx="150" cy="400" r="5" fill="#A855F7" />
+  <circle cx="300" cy="450" r="5" fill="#A855F7" />
+  <circle cx="500" cy="420" r="5" fill="#A855F7" />
+  
+  <!-- Central Element -->
+  <g transform="translate(400, 300)">
+    <!-- Outer Ring -->
+    <circle cx="0" cy="0" r="80" stroke="url(#ring-gradient)" stroke-width="2" fill="none" opacity="0.8" />
+    
+    <!-- Inner Ring with Rotation Animation -->
+    <circle cx="0" cy="0" r="60" stroke="url(#ring-gradient-2)" stroke-width="3" stroke-dasharray="30 10" fill="none">
+      <animateTransform 
+        attributeName="transform" 
+        attributeType="XML" 
+        type="rotate" 
+        from="0 0 0" 
+        to="360 0 0" 
+        dur="20s" 
+        repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Core -->
+    <circle cx="0" cy="0" r="40" fill="url(#core-gradient)" opacity="0.9" />
+    
+    <!-- Pulse Effect -->
+    <circle cx="0" cy="0" r="40" fill="url(#core-gradient)" opacity="0.4">
+      <animate 
+        attributeName="r" 
+        values="40;60;40" 
+        dur="4s" 
+        repeatCount="indefinite" />
+      <animate 
+        attributeName="opacity" 
+        values="0.4;0.1;0.4" 
+        dur="4s" 
+        repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Small Particles -->
+  <g>
+    <circle cx="250" cy="150" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="350" cy="200" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="450" cy="150" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="550" cy="200" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="250" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="250" r="2" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Grid Pattern -->
+    <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" />
+      <path d="M 40 0 L 0 0 0 40" stroke="#FFFFFF" stroke-width="0.5" fill="none" />
+    </pattern>
+    
+    <!-- Gradients -->
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#D946EF" />
+    </linearGradient>
+    
+    <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    
+    <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    
+    <linearGradient id="ring-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    
+    <radialGradient id="core-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="20%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </radialGradient>
+    
+    <!-- Filters -->
+    <filter id="blur-filter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+    </filter>
+  </defs>
+</svg>
