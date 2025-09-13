@@ -101,6 +101,7 @@ export default function Footer() {
             </ul>
           </div>
           
+          
           <div>
             <h3 className="text-sm font-semibold text-neutral-900 mb-4 uppercase tracking-wider">Contact</h3>
             <ul className="space-y-3">
