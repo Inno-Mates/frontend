@@ -6,13 +6,13 @@ import CommunitySection from '@/components/landing/community/CommunitySection';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <HeroSection />
       <HowItWorksSection />
       <ImpactSection />
       <IssueCategoriesSection />
       <CommunitySection />
       {/* Other sections will go here */}
-    </main>
+    </>
   );
 }

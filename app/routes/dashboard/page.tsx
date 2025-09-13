@@ -1,10 +1,9 @@
-import MainLayout from "../../../components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/Card";
 import { Button } from "../../../components/ui/Button";
 
 export default function DashboardPage() {
   return (
-    <MainLayout>
+    <>
       <div className="bg-gray-50 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-8">
@@ -146,6 +145,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }
