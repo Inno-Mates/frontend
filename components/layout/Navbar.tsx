@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { FaSearch, FaBell, FaUser } from 'react-icons/fa';
+import { ArrowRight } from 'lucide-react';
+
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -60,21 +62,11 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:items-center lg:gap-x-6">
-          <button 
-            onClick={() => setSearchOpen(!searchOpen)}
-            className="p-2 text-neutral-600 hover:text-primary-600 transition-colors"
-          >
-            <FaSearch className="h-4 w-4" />
-          </button>
-          <Link 
-            href="/profile" 
-            className="p-2 text-neutral-600 hover:text-primary-600 transition-colors"
-          >
-            <FaUser className="h-4 w-4" />
-          </Link>
-          <Link href="/routes/services" className="text-sm font-medium leading-6 text-white bg-gradient-to-r from-primary-500 to-accent-500 px-5 py-2 rounded-md hover:from-primary-600 hover:to-accent-600 transition-all shadow-md hover:shadow-lg hover:scale-105">
-            Get Started <span aria-hidden="true" className="ml-1">&rarr;</span>
+        <div className="hidden lg:flex lg:items-center lg:gap-x-6 ml-4">
+          
+         
+          <Link href="/routes/services" className="text-sm flex justify-center items-center font-medium leading-6 text-black bg-green-400 bg-gradient-to-r from-primary-500 to-accent-500 px-5 py-2 rounded-md hover:from-primary-600 hover:to-accent-600 transition-all shadow-md hover:shadow-lg hover:scale-105">
+            Get Started <span aria-hidden="true" className="ml-1">    <ArrowRight className='h-5 w-5 ' /></span>
           </Link>
         </div>
       </nav>
@@ -180,7 +172,7 @@ export default function Header() {
                   </div>
                   <Link
                     href="/routes/services"
-                    className="block rounded-lg px-4 py-3 text-base font-medium leading-7 text-white bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 transition-all shadow-md hover:shadow-lg hover:scale-105 text-center"
+                    className="block rounded-lg px-4 py-3 text-base text-black font-medium leading-7  transition-all shadow-md hover:shadow-lg hover:scale-105 text-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Get Started
