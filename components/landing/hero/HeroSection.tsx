@@ -32,7 +32,7 @@ const HeroSection = () => {
                 transition={{ delay: 0.2 }}
                 className="inline-block px-3 py-1 rounded-full bg-[#FF8F00] text-white font-medium text-sm tracking-wide"
               >
-                  Civic Engagement Platform
+                  Civic Connect
               </motion.span>
               
               <motion.h1 
