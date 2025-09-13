@@ -57,13 +57,12 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute left-0 right-0 h-1/2 bg-gradient-to-b from-blue-50 to-transparent -z-10"></div>
-      <div className="absolute -left-32 top-1/4 w-64 h-64 rounded-full bg-orange-100 opacity-30 blur-3xl -z-10"></div>
-      <div className="absolute -right-32 top-1/2 w-64 h-64 rounded-full bg-blue-100 opacity-30 blur-3xl -z-10"></div>
-      
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-white overflow-hidden relative">
+      {/* Prevent horizontal overflow */}
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-blue-50 to-transparent -z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-1/4 w-48 h-48 md:w-64 md:h-64 rounded-full bg-orange-100 opacity-30 blur-3xl -z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-1/2 w-48 h-48 md:w-64 md:h-64 rounded-full bg-blue-100 opacity-30 blur-3xl -z-10 pointer-events-none"></div>
+      <div className="container mx-auto px-4 overflow-x-hidden">
         {/* Section header */}
         <div className="text-center mb-16">
           <motion.div
