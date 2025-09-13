@@ -8,7 +8,7 @@ import MunicipalDashboardSection from '@/components/landing/municipal-dashboard/
 
 export default function Home() {
   return (
-    <main>
+    <>
       <HeroSection />
       <HowItWorksSection />
       {/* <ImpactSection /> */}
@@ -17,6 +17,6 @@ export default function Home() {
       <MobileAppSection />
       <MunicipalDashboardSection />
       {/* Other sections will go here */}
-    </main>
+    </>
   );
 }

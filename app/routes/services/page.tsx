@@ -1,4 +1,3 @@
-import MainLayout from "../../../components/layout/MainLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/Card";
 import { Button } from "../../../components/ui/Button";
 import Link from "next/link";
@@ -62,7 +61,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <MainLayout>
+    <>
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
@@ -79,7 +78,7 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <Card key={index} className="flex flex-col justify-between">
                   <CardHeader>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600">
                       {service.icon}
                     </div>
                     <CardTitle className="mt-4">{service.title}</CardTitle>
@@ -100,9 +99,9 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-indigo-50">
+      <div className="bg-primary-50">
         <div className="mx-auto max-w-7xl py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-indigo-600 px-6 py-12 text-center shadow-xl sm:rounded-3xl sm:px-16">
+          <div className="relative isolate overflow-hidden bg-primary-600 px-6 py-12 text-center shadow-xl sm:rounded-3xl sm:px-16">
             <h2 className="mx-auto max-w-2xl text-2xl font-bold tracking-tight text-white">
               Ready to get started with Civic Connect?
             </h2>
@@ -110,7 +109,7 @@ export default function ServicesPage() {
               Join thousands of citizens who are using our platform to improve their communities.
             </p>
             <div className="mt-8 flex items-center justify-center gap-x-6">
-              <Button variant="default" size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50">
+              <Button variant="default" size="lg" className="bg-white text-primary-600 hover:bg-primary-50">
                 Sign up for free
               </Button>
               <Link href="/routes/contact" className="text-sm font-semibold leading-6 text-white">
@@ -120,6 +119,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }
