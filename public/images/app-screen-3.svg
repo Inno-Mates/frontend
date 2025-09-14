@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" fill="none">
+  <!-- Background -->
+  <rect width="390" height="844" rx="40" fill="#FFFFFF"/>
+  
+  <!-- Status Bar -->
+  <rect width="390" height="44" fill="#43A047"/>
+  <text x="20" y="27" font-family="Arial" font-size="14" fill="white">9:41</text>
+  <circle cx="355" cy="22" r="4" fill="white"/>
+  <circle cx="370" cy="22" r="4" fill="white"/>
+  <circle cx="340" cy="22" r="4" fill="white"/>
+  
+  <!-- App Header -->
+  <rect y="44" width="390" height="60" fill="#43A047"/>
+  <text x="20" y="80" font-family="Arial" font-size="18" font-weight="bold" fill="white">Notifications</text>
+  
+  <!-- Notification Items with Animation -->
+  <g>
+    <rect x="20" y="124" width="350" height="90" rx="10" fill="#F5F5F5">
+      <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="50" cy="154" r="20" fill="#43A047" opacity="0.2"/>
+    <circle cx="50" cy="154" r="12" fill="#43A047"/>
+    <text x="80" y="144" font-family="Arial" font-size="16" font-weight="bold" fill="#212121">Issue Received</text>
+    <text x="80" y="164" font-family="Arial" font-size="14" fill="#757575">Your report has been received and is under review.</text>
+    <text x="80" y="184" font-family="Arial" font-size="12" fill="#9E9E9E">10 minutes ago</text>
+  </g>
+  
+  <g>
+    <rect x="20" y="234" width="350" height="90" rx="10" fill="#F5F5F5">
+      <animate attributeName="opacity" values="1;0.8;1" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="50" cy="264" r="20" fill="#FFC107" opacity="0.2"/>
+    <circle cx="50" cy="264" r="12" fill="#FFC107"/>
+    <text x="80" y="254" font-family="Arial" font-size="16" font-weight="bold" fill="#212121">In Progress</text>
+    <text x="80" y="274" font-family="Arial" font-size="14" fill="#757575">Your issue has been assigned to a technician.</text>
+    <text x="80" y="294" font-family="Arial" font-size="12" fill="#9E9E9E">2 hours ago</text>
+  </g>
+  
+  <g>
+    <rect x="20" y="344" width="350" height="90" rx="10" fill="#F5F5F5">
+      <animate attributeName="opacity" values="1;0.8;1" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="50" cy="374" r="20" fill="#2196F3" opacity="0.2"/>
+    <circle cx="50" cy="374" r="12" fill="#2196F3"/>
+    <text x="80" y="364" font-family="Arial" font-size="16" font-weight="bold" fill="#212121">Update Available</text>
+    <text x="80" y="384" font-family="Arial" font-size="14" fill="#757575">Technician has provided an update on your issue.</text>
+    <text x="80" y="404" font-family="Arial" font-size="12" fill="#9E9E9E">Yesterday</text>
+  </g>
+  
+  <g>
+    <rect x="20" y="454" width="350" height="90" rx="10" fill="#F5F5F5">
+      <animate attributeName="opacity" values="1;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="50" cy="484" r="20" fill="#9C27B0" opacity="0.2"/>
+    <circle cx="50" cy="484" r="12" fill="#9C27B0"/>
+    <text x="80" y="474" font-family="Arial" font-size="16" font-weight="bold" fill="#212121">Community Support</text>
+    <text x="80" y="494" font-family="Arial" font-size="14" fill="#757575">5 people have reported the same issue.</text>
+    <text x="80" y="514" font-family="Arial" font-size="12" fill="#9E9E9E">2 days ago</text>
+  </g>
+  
+  <!-- Settings Section -->
+  <rect x="20" y="574" width="350" height="60" rx="10" fill="#E8F5E9"/>
+  <text x="50" y="610" font-family="Arial" font-size="16" fill="#212121">Notification Settings</text>
+  <circle cx="350" cy="604" r="10" fill="#43A047"/>
+  <rect x="345" y="599" width="10" height="10" fill="white" rx="1"/>
+  
+  <!-- Filter Options -->
+  <rect x="20" y="654" width="105" height="40" rx="20" fill="#43A047"/>
+  <text x="45" y="679" font-family="Arial" font-size="14" fill="white">All</text>
+  
+  <rect x="135" y="654" width="105" height="40" rx="20" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="155" y="679" font-family="Arial" font-size="14" fill="#757575">Unread</text>
+  
+  <rect x="250" y="654" width="120" height="40" rx="20" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="270" y="679" font-family="Arial" font-size="14" fill="#757575">Important</text>
+  
+  <!-- Bottom Navigation -->
+  <rect y="784" width="390" height="60" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <circle cx="75" cy="814" r="20" fill="#F5F5F5"/>
+  <circle cx="195" cy="814" r="20" fill="#F5F5F5"/>
+  <circle cx="315" cy="814" r="20" fill="#43A047"/>
+</svg>

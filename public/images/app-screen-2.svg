@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" fill="none">
+  <!-- Background -->
+  <rect width="390" height="844" rx="40" fill="#FFFFFF"/>
+  
+  <!-- Status Bar -->
+  <rect width="390" height="44" fill="#1E88E5"/>
+  <text x="20" y="27" font-family="Arial" font-size="14" fill="white">9:41</text>
+  <circle cx="355" cy="22" r="4" fill="white"/>
+  <circle cx="370" cy="22" r="4" fill="white"/>
+  <circle cx="340" cy="22" r="4" fill="white"/>
+  
+  <!-- App Header -->
+  <rect y="44" width="390" height="60" fill="#1E88E5"/>
+  <text x="20" y="80" font-family="Arial" font-size="18" font-weight="bold" fill="white">Issue Location</text>
+  
+  <!-- Map Area -->
+  <rect y="104" width="390" height="500" fill="#E3F2FD"/>
+  
+  <!-- Map Elements -->
+  <rect x="20" y="150" width="100" height="100" rx="5" fill="#C5E1F5"/>
+  <rect x="140" y="180" width="120" height="80" rx="5" fill="#C5E1F5"/>
+  <rect x="280" y="150" width="90" height="120" rx="5" fill="#C5E1F5"/>
+  
+  <rect x="40" y="300" width="150" height="60" rx="5" fill="#C5E1F5"/>
+  <rect x="220" y="320" width="130" height="80" rx="5" fill="#C5E1F5"/>
+  
+  <rect x="70" y="400" width="100" height="100" rx="5" fill="#C5E1F5"/>
+  <rect x="200" y="430" width="160" height="60" rx="5" fill="#C5E1F5"/>
+  
+  <!-- Roads -->
+  <rect x="0" y="270" width="390" height="10" fill="#BBDEFB"/>
+  <rect x="190" y="104" width="10" height="500" fill="#BBDEFB"/>
+  
+  <!-- Location Pin -->
+  <circle cx="195" cy="274" r="20" fill="#FF4081" opacity="0.9">
+    <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="195" cy="274" r="10" fill="#E91E63"/>
+  
+  <!-- Location Info Card -->
+  <rect x="20" y="624" width="350" height="120" rx="10" fill="white" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="30" y="654" font-family="Arial" font-size="16" font-weight="bold" fill="#212121">Current Location</text>
+  <text x="30" y="684" font-family="Arial" font-size="14" fill="#757575">123 Main Street, City Center</text>
+  <text x="30" y="714" font-family="Arial" font-size="14" fill="#757575">Lat: 40.7128° N, Long: 74.0060° W</text>
+  
+  <!-- Confirm Button -->
+  <rect x="240" y="694" width="120" height="40" rx="20" fill="#1E88E5"/>
+  <text x="270" y="719" font-family="Arial" font-size="14" font-weight="bold" fill="white">Confirm</text>
+  
+  <!-- Bottom Navigation -->
+  <rect y="784" width="390" height="60" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <circle cx="75" cy="814" r="20" fill="#F5F5F5"/>
+  <circle cx="195" cy="814" r="20" fill="#1E88E5"/>
+  <circle cx="315" cy="814" r="20" fill="#F5F5F5"/>
+</svg>

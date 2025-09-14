@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  /* Main colors */
+  /* Main colors - High contrast theme */
   --background: #ffffff;
   --foreground: #0f172a;
-  
-  /* Primary colors - Green (Civic Engagement) */
+
+  /* Primary colors - Modern Green */
   --primary-50: #f0fdf4;
   --primary-100: #dcfce7;
   --primary-200: #bbf7d0;
@@ -17,8 +17,8 @@
   --primary-700: #15803d;
   --primary-800: #166534;
   --primary-900: #14532d;
-  
-  /* Accent colors - Teal (Clean Water) */
+
+  /* Accent colors - Professional Teal */
   --accent-50: #f0fdfa;
   --accent-100: #ccfbf1;
   --accent-200: #99f6e4;
@@ -29,8 +29,8 @@
   --accent-700: #0f766e;
   --accent-800: #115e59;
   --accent-900: #134e4a;
-  
-  /* Secondary colors - Amber (Community) */
+
+  /* Secondary colors - Warm Amber */
   --secondary-50: #fffbeb;
   --secondary-100: #fef3c7;
   --secondary-200: #fde68a;
@@ -41,8 +41,8 @@
   --secondary-700: #b45309;
   --secondary-800: #92400e;
   --secondary-900: #78350f;
-  
-  /* Neutral colors - Slate */
+
+  /* Neutral colors - High Contrast */
   --neutral-50: #f8fafc;
   --neutral-100: #f1f5f9;
   --neutral-200: #e2e8f0;
@@ -54,18 +54,13 @@
   --neutral-800: #1e293b;
   --neutral-900: #0f172a;
   --neutral-950: #020617;
-  
-  /* Success, warning, error */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -79,16 +74,40 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   letter-spacing: -0.01em;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  color: var(--neutral-900);
+}
+
+/* Enhanced text contrast for better readability */
+p,
+span,
+div {
+  color: var(--neutral-700);
+}
+
+.text-muted {
+  color: var(--neutral-600);
+}
+
+.text-subtle {
+  color: var(--neutral-500);
 }
 
 /* Custom scrollbar */
@@ -109,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--neutral-400);
 }
 
-/* Animation classes */
+/* Professional Animation Classes */
 .animate-blob {
   animation: blob 7s infinite;
 }
@@ -137,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Gradient text */
+/* Enhanced Gradient Text */
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
@@ -147,11 +166,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-blue-purple {
-  background-image: linear-gradient(45deg, var(--primary-500), var(--accent-500), var(--primary-500));
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-500),
+    var(--accent-500),
+    var(--primary-500)
+  );
 }
 
 .text-gradient-purple-blue {
-  background-image: linear-gradient(45deg, var(--accent-500), var(--primary-500), var(--accent-500));
+  background-image: linear-gradient(
+    45deg,
+    var(--accent-500),
+    var(--primary-500),
+    var(--accent-500)
+  );
 }
 
 @keyframes gradient-text {
@@ -164,4 +193,120 @@ h1, h2, h3, h4, h5, h6 {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Professional Button Animations */
+.btn-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.btn-hover-lift:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth Focus States */
+.focus-ring {
+  transition: all 0.2s ease;
+}
+
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+}
+
+/* Professional Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced Glass Effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-effect-dark {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Enhanced Form Elements */
+.form-input {
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.form-input:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  outline: none;
+}
+
+.form-input:hover:not(:focus) {
+  border-color: var(--neutral-300);
+}
+
+/* Professional Typography */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
 }

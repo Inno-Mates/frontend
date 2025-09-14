@@ -1,21 +1,21 @@
-import HeroSection from '@/components/landing/hero/HeroSection';
+import ClientHeroSection from '@/components/landing/hero/client-hero';
 import HowItWorksSection from '@/components/landing/how-it-works/HowItWorksSection';
 import ImpactSection from '@/components/landing/impact/ImpactSection';
 import IssueCategoriesSection from '@/components/landing/issue-categories/IssueCategoriesSection';
 import CommunitySection from '@/components/landing/community/CommunitySection';
 import MobileAppSection from '@/components/landing/mobile-app/MobileAppSection';
-import MunicipalDashboardSection from '@/components/landing/municipal-dashboard/MunicipalDashboardSection';
+import ClientMunicipalDashboardSection from '@/components/landing/municipal-dashboard/client-page';
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <ClientHeroSection />
       <HowItWorksSection />
       {/* <ImpactSection /> */}
       <IssueCategoriesSection />
       <CommunitySection />
       <MobileAppSection />
-      <MunicipalDashboardSection />
+      <ClientMunicipalDashboardSection />
       {/* Other sections will go here */}
     </>
   );
