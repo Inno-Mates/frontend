@@ -3,11 +3,14 @@
 import { Button } from "../../components/ui/Button";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaExclamationTriangle, FaMobileAlt, FaClipboardCheck, FaTools, FaChartLine } from 'react-icons/fa';
+import { FaExclamationTriangle, FaMobileAlt, FaClipboardCheck, FaTools, FaChartLine, FaEye, FaMapMarkedAlt, FaCheckCircle, FaWrench, FaThumbsUp, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Iphone15Pro from "../../components/magicui/iphone-15-pro";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function ClientHowItWorksPage() {
+  // State for expanded steps
+  const [expandedStep, setExpandedStep] = useState(null);
+  
   // Refs for scroll animations
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -51,48 +54,58 @@ export default function ClientHowItWorksPage() {
   const processSteps = [
     {
       id: 1,
-      title: "Identify Issues",
+      title: "Spot the Issue",
       description: "Citizens identify civic issues like potholes, broken streetlights, or overflowing trash bins in their community.",
-      icon: <FaExclamationTriangle className="h-6 w-6" />,
-      color: "bg-primary-100",
-      iconColor: "text-primary-600",
-      borderColor: "border-primary-200"
+      icon: <FaEye className="h-8 w-8" />,
+      color: "bg-gradient-to-br from-red-50 to-orange-50",
+      iconColor: "text-red-600",
+      borderColor: "border-red-200",
+      gradient: "from-red-500 to-orange-500",
+      details: "Walk around your neighborhood and spot infrastructure problems that need attention."
     },
     {
       id: 2,
       title: "Report via App",
       description: "Using our mobile app, citizens can quickly report issues with photos, location data, and descriptions.",
-      icon: <FaMobileAlt className="h-6 w-6" />,
-      color: "bg-accent-100",
-      iconColor: "text-accent-600",
-      borderColor: "border-accent-200"
+      icon: <FaMobileAlt className="h-8 w-8" />,
+      color: "bg-gradient-to-br from-blue-50 to-indigo-50",
+      iconColor: "text-blue-600",
+      borderColor: "border-blue-200",
+      gradient: "from-blue-500 to-indigo-500",
+      details: "Take a photo, add a description, and our app automatically captures your location."
     },
     {
       id: 3,
-      title: "Verification",
-      description: "Our system verifies and categorizes reports, ensuring they reach the appropriate municipal departments.",
-      icon: <FaClipboardCheck className="h-6 w-6" />,
-      color: "bg-secondary-100",
-      iconColor: "text-secondary-600",
-      borderColor: "border-secondary-200"
+      title: "Smart Verification",
+      description: "Our AI system verifies and categorizes reports, ensuring they reach the appropriate municipal departments.",
+      icon: <FaCheckCircle className="h-8 w-8" />,
+      color: "bg-gradient-to-br from-yellow-50 to-amber-50",
+      iconColor: "text-yellow-600",
+      borderColor: "border-yellow-200",
+      gradient: "from-yellow-500 to-amber-500",
+      details: "AI-powered verification ensures reports are legitimate and properly categorized."
     },
     {
       id: 4,
-      title: "Resolution",
+      title: "Municipal Action",
       description: "Municipal authorities address the reported issues and update the status in the system.",
-      icon: <FaTools className="h-6 w-6" />,
-      color: "bg-primary-100",
-      iconColor: "text-primary-600",
-      borderColor: "border-primary-200"
+      icon: <FaWrench className="h-8 w-8" />,
+      color: "bg-gradient-to-br from-purple-50 to-pink-50",
+      iconColor: "text-purple-600",
+      borderColor: "border-purple-200",
+      gradient: "from-purple-500 to-pink-500",
+      details: "Authorities receive prioritized reports and take action to resolve the issues."
     },
     {
       id: 5,
-      title: "Tracking & Feedback",
+      title: "Track & Feedback",
       description: "Citizens can track the status of their reports and provide feedback on the resolution process.",
-      icon: <FaChartLine className="h-6 w-6" />,
-      color: "bg-accent-100",
-      iconColor: "text-accent-600",
-      borderColor: "border-accent-200"
+      icon: <FaThumbsUp className="h-8 w-8" />,
+      color: "bg-gradient-to-br from-green-50 to-emerald-50",
+      iconColor: "text-green-600",
+      borderColor: "border-green-200",
+      gradient: "from-green-500 to-emerald-500",
+      details: "Get real-time updates and rate the quality of the resolution work."
     }
   ];
 
@@ -261,86 +274,302 @@ export default function ClientHowItWorksPage() {
       </div>
 
       {/* Process Flow Section */}
-      <div className="bg-white py-16 sm:py-24" ref={targetRef}>
+      <div className="bg-gradient-to-b from-white to-gray-50 py-20 sm:py-28 relative overflow-hidden" ref={targetRef}>
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 bg-[url('/patterns/circuit-board.svg')] opacity-5"></div>
+        <motion.div 
+          className="absolute top-20 right-20 w-72 h-72 rounded-full bg-blue-100/30 opacity-50 blur-3xl -z-10"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            repeatType: "reverse" 
+          }}
+        ></motion.div>
+        <motion.div 
+          className="absolute bottom-20 left-20 w-72 h-72 rounded-full bg-green-100/30 opacity-50 blur-3xl -z-10"
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1
+          }}
+        ></motion.div>
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div 
-            className="mx-auto max-w-2xl lg:text-center mb-16"
+            className="mx-auto max-w-3xl text-center mb-20"
             style={{ opacity, y, scale }}
           >
-            <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-primary-100 to-accent-100 text-primary-800 font-medium text-sm tracking-wide mb-3 shadow-sm">
+            <motion.span 
+              className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-green-100 text-blue-800 font-semibold text-sm tracking-wide mb-4 shadow-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+            >
               Our Process
-            </span>
-            <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
-              The <span className="text-gradient text-gradient-blue-purple">5-Step</span> Process
-            </h2>
-            <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-              Our platform simplifies the civic issue reporting and resolution process
-            </p>
+            </motion.span>
+            <motion.h2 
+              className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              The <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">5-Step</span> Process
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              Our platform simplifies the civic issue reporting and resolution process with an intuitive workflow
+            </motion.p>
           </motion.div>
 
-          <motion.div 
-            className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* Process Steps */}
-            <div className="col-span-3">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                {processSteps.map((step, index) => (
+          {/* Enhanced Process Steps */}
+          <div className="relative">
+            {/* Progress line for desktop */}
+            <motion.div 
+              className="hidden xl:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-green-200 to-blue-200 rounded-full"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 2, delay: 0.5 }}
+              viewport={{ once: true }}
+            />
+            
+            {/* Process Steps Grid */}
+            <motion.div 
+              className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {processSteps.map((step, index) => (
+                <motion.div 
+                  key={step.id} 
+                  className="relative group"
+                  variants={itemVariants}
+                  whileHover={{ y: -8, scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {/* Step Card */}
                   <motion.div 
-                    key={step.id} 
-                    className={`relative rounded-2xl ${step.color} p-6 border ${step.borderColor} hover:shadow-lg transition-all duration-300`}
-                    variants={itemVariants}
-                    whileHover={{ y: -5, scale: 1.02 }}
+                    className={`relative rounded-3xl ${step.color} p-8 border-2 ${step.borderColor} hover:shadow-2xl transition-all duration-500 group-hover:border-opacity-60 h-full cursor-pointer`}
+                    onClick={() => setExpandedStep(expandedStep === step.id ? null : step.id)}
+                    whileTap={{ scale: 0.98 }}
                   >
+                    {/* Step number badge with gradient */}
                     <motion.div 
-                      className="flex items-center gap-4 mb-4"
-                      whileHover={{ x: 3 }}
+                      className={`absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r ${step.gradient} rounded-full shadow-lg flex items-center justify-center border-4 border-white`}
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <span className="text-lg font-bold text-white">{step.id}</span>
+                    </motion.div>
+
+                    {/* Icon container with enhanced styling */}
+                    <motion.div 
+                      className="flex items-center justify-center mb-6"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400 }}
                     >
                       <motion.div 
-                        className={`flex h-10 w-10 items-center justify-center rounded-lg bg-white ${step.iconColor}`}
-                        whileHover={{ rotate: 5 }}
+                        className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-white shadow-xl ${step.iconColor} group-hover:shadow-2xl relative overflow-hidden`}
+                        whileHover={{ rotate: [0, -5, 5, 0] }}
                         animate={{ 
-                          scale: [1, 1.1, 1],
+                          scale: [1, 1.05, 1],
+                        }}
+                        transition={{ 
+                          duration: 3, 
+                          repeat: Infinity,
+                          repeatType: "reverse",
+                          delay: index * 0.3
+                        }}
+                      >
+                        {/* Icon background gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-10 rounded-3xl`} />
+                        <div className="text-3xl relative z-10">
+                          {step.icon}
+                        </div>
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Content */}
+                    <div className="text-center">
+                      <motion.h3 
+                        className={`text-xl font-bold text-gray-900 mb-3 group-hover:bg-gradient-to-r ${step.gradient} group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300`}
+                        whileHover={{ x: 2 }}
+                      >
+                        {step.title}
+                      </motion.h3>
+                      <motion.p 
+                        className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                        whileHover={{ x: 2 }}
+                      >
+                        {step.description}
+                      </motion.p>
+
+                      {/* Expandable details */}
+                      <motion.div
+                        initial={false}
+                        animate={{ 
+                          height: expandedStep === step.id ? "auto" : 0,
+                          opacity: expandedStep === step.id ? 1 : 0
+                        }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="mt-4 p-4 bg-white/50 rounded-2xl border border-white/30">
+                          <p className="text-sm text-gray-600 font-medium">
+                            💡 {step.details}
+                          </p>
+                        </div>
+                      </motion.div>
+
+                      {/* Expand/Collapse button */}
+                      <motion.div 
+                        className="mt-4 flex justify-center"
+                        animate={{ rotate: expandedStep === step.id ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className={`p-2 rounded-full ${expandedStep === step.id ? 'bg-white/80' : 'bg-white/50'} hover:bg-white/80 transition-colors duration-200`}>
+                          {expandedStep === step.id ? (
+                            <FaChevronUp className="text-gray-600" />
+                          ) : (
+                            <FaChevronDown className="text-gray-600" />
+                          )}
+                        </div>
+                      </motion.div>
+                    </div>
+
+                    {/* Enhanced hover effect overlay */}
+                    <motion.div 
+                      className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                      initial={false}
+                    />
+
+                    {/* Pulse effect for active step */}
+                    {expandedStep === step.id && (
+                      <motion.div
+                        className={`absolute inset-0 rounded-3xl border-2 border-gradient-to-r ${step.gradient} opacity-50`}
+                        animate={{ 
+                          scale: [1, 1.02, 1],
+                          opacity: [0.3, 0.6, 0.3]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity,
+                          repeatType: "reverse"
+                        }}
+                      />
+                    )}
+                  </motion.div>
+
+                  {/* Enhanced connector line for desktop */}
+                  {index < processSteps.length - 1 && (
+                    <motion.div 
+                      className="hidden xl:block absolute top-24 -right-6 w-12 h-1 bg-gradient-to-r from-blue-300 to-green-300 rounded-full z-10"
+                      initial={{ scaleX: 0, originX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      transition={{ delay: 0.8 + (index * 0.2), duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <motion.div 
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-green-400 shadow-lg"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 1 + (index * 0.2), duration: 0.4 }}
+                        viewport={{ once: true }}
+                        animate={{ 
+                          scale: [1, 1.2, 1],
+                          opacity: [1, 0.7, 1]
                         }}
                         transition={{ 
                           duration: 2, 
                           repeat: Infinity,
                           repeatType: "reverse",
-                          delay: index * 0.2
+                          delay: 1.5 + (index * 0.2)
                         }}
-                      >
-                        {step.icon}
-                      </motion.div>
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-sm font-medium text-gray-700">{step.id}</span>
+                      />
                     </motion.div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-700">{step.description}</p>
-                    
-                    {/* Connector line (except for the last item) */}
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Enhanced Mobile progress indicator */}
+            <div className="xl:hidden mt-12 flex justify-center">
+              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-4 shadow-lg border border-gray-200">
+                {processSteps.map((step, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + (index * 0.1), duration: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className={`w-4 h-4 rounded-full ${expandedStep === step.id ? `bg-gradient-to-r ${step.gradient}` : 'bg-gray-300'} shadow-sm`}
+                      animate={{ 
+                        scale: expandedStep === step.id ? [1, 1.3, 1] : [1, 1.1, 1],
+                        backgroundColor: expandedStep === step.id ? undefined : ["#d1d5db", "#3b82f6", "#10b981"]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        delay: index * 0.2
+                      }}
+                      onClick={() => setExpandedStep(expandedStep === step.id ? null : step.id)}
+                    />
                     {index < processSteps.length - 1 && (
                       <motion.div 
-                        className="hidden xl:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "2rem" }}
-                        transition={{ delay: 0.5 + (index * 0.2), duration: 0.5 }}
+                        className="w-8 h-0.5 bg-gray-300 rounded-full"
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        transition={{ delay: 0.7 + (index * 0.1), duration: 0.4 }}
                         viewport={{ once: true }}
-                      >
-                        <motion.div 
-                          className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-400"
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          transition={{ delay: 0.7 + (index * 0.2), duration: 0.3 }}
-                          viewport={{ once: true }}
-                        ></motion.div>
-                      </motion.div>
+                      />
                     )}
                   </motion.div>
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Call to action */}
+          <motion.div 
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Start Your First Report
+              </Button>
+            </motion.div>
+            <p className="mt-4 text-gray-500 text-sm">
+              Join thousands of citizens making their communities better
+            </p>
           </motion.div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import { FaChartLine, FaClipboardCheck, FaExclamationTriangle, FaCalendarAlt, FaCheckCircle } from 'react-icons/fa';
