@@ -487,17 +487,16 @@ export default function ClientHowItWorksPage() {
                         className="absolute right-0 w-3 h-3 transform -translate-y-1/2 rounded-full shadow-lg top-1/2 bg-gradient-to-r from-blue-400 to-green-400"
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 1 + (index * 0.2), duration: 0.4 }}
                         viewport={{ once: true }}
                         animate={{ 
                           scale: [1, 1.2, 1],
                           opacity: [1, 0.7, 1]
                         }}
-                        transition={{ 
-                          duration: 2, 
+                        transition={{
+                          duration: 2,
                           repeat: Infinity,
                           repeatType: "reverse",
-                          delay: 1.5 + (index * 0.2)
+                          delay: 1 + (index * 0.2) // or 1.5 if u prefer the 2nd delay
                         }}
                       />
                     </motion.div>
