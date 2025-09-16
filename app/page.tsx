@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <ClientHeroSection />
       <HowItWorksSection />
-      <ImpactSection />
+      {/* <ImpactSection /> */}
       <IssueCategoriesSection />
       <CommunitySection />
       <MobileAppSection />
