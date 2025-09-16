@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" fill="none">
+  <!-- Background -->
+  <rect width="390" height="844" rx="40" fill="#FFFFFF"/>
+  
+  <!-- Status Bar -->
+  <rect width="390" height="44" fill="#FF8F00"/>
+  <text x="20" y="27" font-family="Arial" font-size="14" fill="white">9:41</text>
+  <circle cx="355" cy="22" r="4" fill="white"/>
+  <circle cx="370" cy="22" r="4" fill="white"/>
+  <circle cx="340" cy="22" r="4" fill="white"/>
+  
+  <!-- App Header -->
+  <rect y="44" width="390" height="60" fill="#FF8F00"/>
+  <text x="20" y="80" font-family="Arial" font-size="18" font-weight="bold" fill="white">Report an Issue</text>
+  
+  <!-- Camera Area -->
+  <rect x="20" y="124" width="350" height="200" rx="10" fill="#F5F5F5"/>
+  <circle cx="195" cy="224" r="40" fill="#E0E0E0"/>
+  <path d="M195 204 L195 244 M175 224 L215 224" stroke="#9E9E9E" stroke-width="4"/>
+  <text x="155" y="280" font-family="Arial" font-size="14" fill="#757575">Tap to take photo</text>
+  
+  <!-- Form Fields -->
+  <rect x="20" y="344" width="350" height="50" rx="8" fill="#F5F5F5"/>
+  <text x="30" y="374" font-family="Arial" font-size="14" fill="#757575">Issue Title</text>
+  
+  <rect x="20" y="414" width="350" height="120" rx="8" fill="#F5F5F5"/>
+  <text x="30" y="444" font-family="Arial" font-size="14" fill="#757575">Describe the issue...</text>
+  
+  <!-- Location -->
+  <rect x="20" y="554" width="350" height="50" rx="8" fill="#F5F5F5"/>
+  <text x="50" y="584" font-family="Arial" font-size="14" fill="#757575">Current Location</text>
+  <circle cx="35" cy="579" r="8" fill="#FF8F00"/>
+  
+  <!-- Submit Button -->
+  <rect x="20" y="624" width="350" height="60" rx="30" fill="#FF8F00"/>
+  <text x="145" y="664" font-family="Arial" font-size="18" font-weight="bold" fill="white">Submit Report</text>
+  
+  <!-- Bottom Navigation -->
+  <rect y="784" width="390" height="60" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <circle cx="75" cy="814" r="20" fill="#F5F5F5"/>
+  <circle cx="195" cy="814" r="20" fill="#F5F5F5"/>
+  <circle cx="315" cy="814" r="20" fill="#FF8F00"/>
+</svg>

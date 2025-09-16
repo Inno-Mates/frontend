@@ -32,8 +32,8 @@ const HowItWorksSection = () => {
       title: "Capture",
       description: "Take a photo and describe the issue",
       icon: <FaCamera className="w-6 h-6" />,
-      color: "#FF8F00",
-      lightColor: "#FFF8E1",
+      color: "#16a34a",
+      lightColor: "#f0fdf4",
       phoneImage: "/phone-capture.png" // You'll need to create this image
     },
     {
@@ -41,8 +41,8 @@ const HowItWorksSection = () => {
       title: "Submit",
       description: "Automatically tag location and send report",
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      color: "#1E88E5",
-      lightColor: "#E3F2FD",
+      color: "#14b8a6",
+      lightColor: "#f0fdfa",
       phoneImage: "/phone-submit.png" // You'll need to create this image
     },
     {
@@ -50,18 +50,18 @@ const HowItWorksSection = () => {
       title: "Track",
       description: "Receive updates until resolution",
       icon: <FaBell className="w-6 h-6" />,
-      color: "#43A047",
-      lightColor: "#E8F5E9",
+      color: "#22c55e",
+      lightColor: "#f0fdf4",
       phoneImage: "/phone-track.png" // You'll need to create this image
     }
   ];
 
   return (
     <section className="py-20 bg-white overflow-hidden relative">
-      {/* Prevent horizontal overflow */}
-      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-blue-50 to-transparent -z-10 pointer-events-none"></div>
-      <div className="absolute left-0 top-1/4 w-48 h-48 md:w-64 md:h-64 rounded-full bg-orange-100 opacity-30 blur-3xl -z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-1/2 w-48 h-48 md:w-64 md:h-64 rounded-full bg-blue-100 opacity-30 blur-3xl -z-10 pointer-events-none"></div>
+      {/* Clean Green Background Elements */}
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-primary-50/50 to-transparent -z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-1/4 w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary-100/40 opacity-50 blur-3xl -z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-1/2 w-48 h-48 md:w-64 md:h-64 rounded-full bg-accent-100/40 opacity-50 blur-3xl -z-10 pointer-events-none"></div>
       <div className="container mx-auto px-4 overflow-x-hidden">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -70,13 +70,13 @@ const HowItWorksSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 font-medium text-sm tracking-wide mb-3">
+            <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-primary-100 to-accent-100 text-primary-800 font-medium text-sm tracking-wide mb-3 shadow-sm">
               Simple Process
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How It <span className="text-[#1E88E5]">Works</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              How It <span className="text-gradient text-gradient-blue-purple">Works</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed">
               Our platform makes it easy to report and track civic issues in your community with just a few taps on your phone.
             </p>
           </motion.div>
