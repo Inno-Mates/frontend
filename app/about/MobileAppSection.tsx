@@ -26,16 +26,16 @@ const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, width, height, clas
      >
       {/* Phone notch with camera and sensors - simplified for stability */}
       <div 
-        className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-6 bg-black rounded-b-2xl z-10 flex justify-center items-center"
+        className="absolute top-0 z-10 flex items-center justify-center w-1/2 h-6 transform -translate-x-1/2 bg-black left-1/2 rounded-b-2xl"
       >
         {/* Front camera */}
         <div 
-          className="absolute right-6 w-2 h-2 rounded-full bg-gray-700"
+          className="absolute w-2 h-2 bg-gray-700 rounded-full right-6"
         />
         
         {/* Proximity sensor */}
         <div 
-          className="absolute left-6 w-4 h-1 rounded-full bg-gray-800"
+          className="absolute w-4 h-1 bg-gray-800 rounded-full left-6"
         />
       </div>
       
@@ -94,7 +94,7 @@ const MobileAppSection = () => {
       id: 0,
       title: "Step 1: Capture Issue",
       description: "Take a photo and let AI automatically categorize the problem",
-      icon: <FaCamera className="h-5 w-5" />,
+      icon: <FaCamera className="w-5 h-5" />,
       color: "#16a34a",
       lightColor: "#f0fdf4",
       mockupContent: (
@@ -103,74 +103,74 @@ const MobileAppSection = () => {
           <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 rounded-t-[32px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <FaCamera className="h-4 w-4" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <FaCamera className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Report Issue</h3>
                   <p className="text-xs text-primary-100">Step 1 of 4</p>
                 </div>
               </div>
-              <div className="w-6 h-6 bg-white/20 rounded-full"></div>
+              <div className="w-6 h-6 rounded-full bg-white/20"></div>
             </div>
           </div>
           
           {/* Progress Bar */}
           <div className="px-4 py-2 bg-primary-50">
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-2 bg-primary-200 rounded-full overflow-hidden">
-                <div className="h-full bg-primary-500 rounded-full w-1/4 transition-all duration-500"></div>
+              <div className="flex-1 h-2 overflow-hidden rounded-full bg-primary-200">
+                <div className="w-1/4 h-full transition-all duration-500 rounded-full bg-primary-500"></div>
               </div>
-              <span className="text-xs text-primary-600 font-medium">25%</span>
+              <span className="text-xs font-medium text-primary-600">25%</span>
             </div>
           </div>
           
           {/* Content */}
           <div className="flex-1 p-4 space-y-4 bg-gray-50">
             {/* Camera Preview with AI Analysis */}
-            <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl overflow-hidden">
+            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-green-400/20"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-lg">
-                  <FaCamera className="h-8 w-8 text-primary-600" />
+                <div className="flex items-center justify-center w-16 h-16 rounded-full shadow-lg bg-white/80">
+                  <FaCamera className="w-8 h-8 text-primary-600" />
                 </div>
               </div>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center">
+              <div className="absolute flex items-center justify-center w-8 h-8 rounded-full top-3 right-3 bg-black/50">
                 <div className="w-4 h-4 border-2 border-white rounded-full"></div>
               </div>
               
               {/* AI Analysis Overlay */}
-              <div className="absolute top-3 left-3 bg-white/90 rounded-lg p-2 shadow-lg">
+              <div className="absolute p-2 rounded-lg shadow-lg top-3 left-3 bg-white/90">
                 <div className="flex items-center gap-1">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-xs font-medium text-gray-700">AI Analyzing...</span>
                 </div>
               </div>
               
-              <div className="absolute bottom-3 left-3 right-3 flex gap-2">
-                <div className="flex-1 h-1 bg-white/50 rounded-full"></div>
+              <div className="absolute flex gap-2 bottom-3 left-3 right-3">
+                <div className="flex-1 h-1 rounded-full bg-white/50"></div>
                 <div className="flex-1 h-1 bg-white rounded-full"></div>
-                <div className="flex-1 h-1 bg-white/50 rounded-full"></div>
-                <div className="flex-1 h-1 bg-white/50 rounded-full"></div>
+                <div className="flex-1 h-1 rounded-full bg-white/50"></div>
+                <div className="flex-1 h-1 rounded-full bg-white/50"></div>
               </div>
             </div>
             
             {/* AI Detection Results */}
-            <div className="bg-white rounded-lg p-3 shadow-sm border-l-4 border-green-500">
+            <div className="p-3 bg-white border-l-4 border-green-500 rounded-lg shadow-sm">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-gray-700">AI Detected</span>
               </div>
               <div className="text-sm text-gray-600">Pothole detected with 94% confidence</div>
-              <div className="text-xs text-green-600 mt-1">✓ Automatically categorized</div>
+              <div className="mt-1 text-xs text-green-600">✓ Automatically categorized</div>
             </div>
             
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <div className="flex-1 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+              <div className="flex items-center justify-center flex-1 h-10 bg-gray-200 rounded-lg">
                 <span className="text-sm text-gray-500">Retake</span>
               </div>
-              <div className="flex-1 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="flex items-center justify-center flex-1 h-10 rounded-lg shadow-lg bg-gradient-to-r from-primary-500 to-primary-600">
                 <span className="text-sm font-semibold text-white">Next Step</span>
               </div>
             </div>
@@ -182,7 +182,7 @@ const MobileAppSection = () => {
       id: 1,
       title: "Step 2: Location & Routing",
       description: "GPS tagging and intelligent routing to the right department",
-      icon: <FaMapMarkerAlt className="h-5 w-5" />,
+      icon: <FaMapMarkerAlt className="w-5 h-5" />,
       color: "#14b8a6",
       lightColor: "#f0fdfa",
       mockupContent: (
@@ -191,8 +191,8 @@ const MobileAppSection = () => {
           <div className="bg-gradient-to-r from-accent-500 to-accent-600 text-white p-4 rounded-t-[32px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <FaMapMarkerAlt className="h-4 w-4" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <FaMapMarkerAlt className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Location & Routing</h3>
@@ -209,64 +209,64 @@ const MobileAppSection = () => {
           {/* Progress Bar */}
           <div className="px-4 py-2 bg-accent-50">
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-2 bg-accent-200 rounded-full overflow-hidden">
-                <div className="h-full bg-accent-500 rounded-full w-1/2 transition-all duration-500"></div>
+              <div className="flex-1 h-2 overflow-hidden rounded-full bg-accent-200">
+                <div className="w-1/2 h-full transition-all duration-500 rounded-full bg-accent-500"></div>
               </div>
-              <span className="text-xs text-accent-600 font-medium">50%</span>
+              <span className="text-xs font-medium text-accent-600">50%</span>
             </div>
           </div>
           
           {/* Map Content */}
-          <div className="flex-1 relative bg-gradient-to-br from-accent-50 to-accent-100">
+          <div className="relative flex-1 bg-gradient-to-br from-accent-50 to-accent-100">
             {/* Map Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent-100 to-accent-200">
               {/* Street Grid */}
               <div className="absolute inset-0 opacity-30">
-                <div className="absolute top-1/4 left-0 right-0 h-px bg-accent-300"></div>
-                <div className="absolute top-1/2 left-0 right-0 h-px bg-accent-300"></div>
-                <div className="absolute top-3/4 left-0 right-0 h-px bg-accent-300"></div>
-                <div className="absolute left-1/4 top-0 bottom-0 w-px bg-accent-300"></div>
-                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-accent-300"></div>
-                <div className="absolute left-3/4 top-0 bottom-0 w-px bg-accent-300"></div>
+                <div className="absolute left-0 right-0 h-px top-1/4 bg-accent-300"></div>
+                <div className="absolute left-0 right-0 h-px top-1/2 bg-accent-300"></div>
+                <div className="absolute left-0 right-0 h-px top-3/4 bg-accent-300"></div>
+                <div className="absolute top-0 bottom-0 w-px left-1/4 bg-accent-300"></div>
+                <div className="absolute top-0 bottom-0 w-px left-1/2 bg-accent-300"></div>
+                <div className="absolute top-0 bottom-0 w-px left-3/4 bg-accent-300"></div>
               </div>
               
               {/* Location Marker */}
-              <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/3 left-1/2">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg animate-pulse">
-                    <FaMapMarkerAlt className="h-6 w-6" />
+                  <div className="flex items-center justify-center w-12 h-12 text-white rounded-full shadow-lg bg-primary-600 animate-pulse">
+                    <FaMapMarkerAlt className="w-6 h-6" />
                   </div>
-                  <div className="absolute -inset-4 bg-primary-500/20 rounded-full animate-ping"></div>
+                  <div className="absolute rounded-full -inset-4 bg-primary-500/20 animate-ping"></div>
                 </div>
               </div>
               
               {/* Department Routing Lines */}
-              <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/3 left-1/2">
                 <div className="absolute top-8 left-8 w-16 h-0.5 bg-accent-500 transform rotate-45"></div>
                 <div className="absolute top-8 right-8 w-16 h-0.5 bg-accent-500 transform -rotate-45"></div>
               </div>
               
               {/* Department Icons */}
-              <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+              <div className="absolute flex items-center justify-center w-8 h-8 text-xs font-bold text-white rounded-full top-1/4 left-1/4 bg-accent-500">
                 PW
               </div>
-              <div className="absolute top-1/4 right-1/4 w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+              <div className="absolute flex items-center justify-center w-8 h-8 text-xs font-bold text-white rounded-full top-1/4 right-1/4 bg-accent-500">
                 UT
               </div>
             </div>
             
             {/* Routing Info Card */}
-            <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl">
+            <div className="absolute p-4 shadow-xl bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl">
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
-                  <FaRocket className="h-4 w-4 text-accent-600" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-100">
+                  <FaRocket className="w-4 h-4 text-accent-600" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-gray-900">Auto-Routed</div>
                   <div className="text-xs text-gray-600">Public Works Department</div>
                 </div>
               </div>
-              <div className="text-sm text-gray-700 mb-2">123 Main Street, Downtown</div>
+              <div className="mb-2 text-sm text-gray-700">123 Main Street, Downtown</div>
               <div className="flex items-center gap-4 text-xs text-gray-500">
                 <span>Priority: High</span>
                 <span>ETA: 2 days</span>
@@ -274,11 +274,11 @@ const MobileAppSection = () => {
             </div>
             
             {/* Map Controls */}
-            <div className="absolute top-4 right-4 flex flex-col gap-2">
-              <div className="w-8 h-8 bg-white/90 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="absolute flex flex-col gap-2 top-4 right-4">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg shadow-lg bg-white/90">
                 <div className="w-4 h-4 border-2 border-gray-400 rounded"></div>
               </div>
-              <div className="w-8 h-8 bg-white/90 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg shadow-lg bg-white/90">
                 <div className="text-xs font-bold text-gray-600">+</div>
               </div>
             </div>
@@ -290,7 +290,7 @@ const MobileAppSection = () => {
       id: 2,
       title: "Step 3: Track Progress",
       description: "Real-time updates on your complaint status and resolution progress",
-      icon: <FaBell className="h-5 w-5" />,
+      icon: <FaBell className="w-5 h-5" />,
       color: "#22c55e",
       lightColor: "#f0fdf4",
       mockupContent: (
@@ -299,15 +299,15 @@ const MobileAppSection = () => {
           <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 rounded-t-[32px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <FaBell className="h-4 w-4" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <FaBell className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Track Progress</h3>
                   <p className="text-xs text-primary-100">Step 3 of 4</p>
                 </div>
               </div>
-              <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
                 <span className="text-xs font-bold">3</span>
               </div>
             </div>
@@ -316,27 +316,27 @@ const MobileAppSection = () => {
           {/* Progress Bar */}
           <div className="px-4 py-2 bg-primary-50">
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-2 bg-primary-200 rounded-full overflow-hidden">
-                <div className="h-full bg-primary-500 rounded-full w-3/4 transition-all duration-500"></div>
+              <div className="flex-1 h-2 overflow-hidden rounded-full bg-primary-200">
+                <div className="w-3/4 h-full transition-all duration-500 rounded-full bg-primary-500"></div>
               </div>
-              <span className="text-xs text-primary-600 font-medium">75%</span>
+              <span className="text-xs font-medium text-primary-600">75%</span>
             </div>
           </div>
           
           {/* Status Timeline */}
           <div className="flex-1 p-4 space-y-4 bg-gray-50">
             {/* Current Status */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border-l-4 border-green-500">
+            <div className="p-4 bg-white border-l-4 border-green-500 shadow-sm rounded-xl">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <FaRocket className="h-5 w-5 text-green-600" />
+                <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-green-100 rounded-full">
+                  <FaRocket className="w-5 h-5 text-green-600" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm font-bold text-green-800">In Progress</span>
                     <span className="text-xs text-gray-500">2h ago</span>
                   </div>
-                  <p className="text-sm text-gray-700 mb-2">Public Works team dispatched to location</p>
+                  <p className="mb-2 text-sm text-gray-700">Public Works team dispatched to location</p>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-xs text-gray-600">Estimated completion: 1 day</span>
@@ -348,8 +348,8 @@ const MobileAppSection = () => {
             {/* Progress Steps */}
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <FaCheckCircle className="h-3 w-3 text-white" />
+                <div className="flex items-center justify-center w-6 h-6 bg-green-500 rounded-full">
+                  <FaCheckCircle className="w-3 h-3 text-white" />
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-gray-900">Issue Reported</div>
@@ -358,8 +358,8 @@ const MobileAppSection = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <FaCheckCircle className="h-3 w-3 text-white" />
+                <div className="flex items-center justify-center w-6 h-6 bg-green-500 rounded-full">
+                  <FaCheckCircle className="w-3 h-3 text-white" />
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-gray-900">Auto-Routed to Department</div>
@@ -368,8 +368,8 @@ const MobileAppSection = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <FaCheckCircle className="h-3 w-3 text-white" />
+                <div className="flex items-center justify-center w-6 h-6 bg-green-500 rounded-full">
+                  <FaCheckCircle className="w-3 h-3 text-white" />
                 </div>
                 <div className="flex-1">
                   <div className="text-sm font-medium text-gray-900">Work Started</div>
@@ -378,7 +378,7 @@ const MobileAppSection = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
+                <div className="flex items-center justify-center w-6 h-6 bg-gray-300 rounded-full">
                   <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
                 </div>
                 <div className="flex-1">
@@ -390,7 +390,7 @@ const MobileAppSection = () => {
             
             {/* Action Button */}
             <div className="pt-2">
-              <div className="w-full h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center justify-center w-full h-10 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600">
                 <span className="text-sm font-semibold text-white">Get Notifications</span>
               </div>
             </div>
@@ -402,7 +402,7 @@ const MobileAppSection = () => {
       id: 3,
       title: "Step 4: Resolution & Impact",
       description: "Issue resolved and community impact analytics",
-      icon: <FaChartLine className="h-5 w-5" />,
+      icon: <FaChartLine className="w-5 h-5" />,
       color: "#0d9488",
       lightColor: "#f0fdfa",
       mockupContent: (
@@ -411,15 +411,15 @@ const MobileAppSection = () => {
           <div className="bg-gradient-to-r from-accent-600 to-accent-700 text-white p-4 rounded-t-[32px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                  <FaChartLine className="h-4 w-4" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <FaChartLine className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Resolution Complete</h3>
                   <p className="text-xs text-accent-100">Step 4 of 4</p>
                 </div>
               </div>
-              <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20">
                 <span className="text-xs">✓</span>
               </div>
             </div>
@@ -428,27 +428,27 @@ const MobileAppSection = () => {
           {/* Progress Bar */}
           <div className="px-4 py-2 bg-accent-50">
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-2 bg-accent-200 rounded-full overflow-hidden">
-                <div className="h-full bg-accent-500 rounded-full w-full transition-all duration-500"></div>
+              <div className="flex-1 h-2 overflow-hidden rounded-full bg-accent-200">
+                <div className="w-full h-full transition-all duration-500 rounded-full bg-accent-500"></div>
               </div>
-              <span className="text-xs text-accent-600 font-medium">100%</span>
+              <span className="text-xs font-medium text-accent-600">100%</span>
             </div>
           </div>
           
           {/* Completion Content */}
           <div className="flex-1 p-4 space-y-4 bg-gray-50">
             {/* Success Message */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border-l-4 border-green-500">
+            <div className="p-4 bg-white border-l-4 border-green-500 shadow-sm rounded-xl">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <FaCheckCircle className="h-5 w-5 text-green-600" />
+                <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 bg-green-100 rounded-full">
+                  <FaCheckCircle className="w-5 h-5 text-green-600" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm font-bold text-green-800">Issue Resolved!</span>
                     <span className="text-xs text-gray-500">1 hour ago</span>
                   </div>
-                  <p className="text-sm text-gray-700 mb-2">Pothole on Main Street has been successfully repaired</p>
+                  <p className="mb-2 text-sm text-gray-700">Pothole on Main Street has been successfully repaired</p>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <span className="text-xs text-gray-600">Completed by Public Works Team</span>
@@ -459,21 +459,21 @@ const MobileAppSection = () => {
             
             {/* Impact Stats */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="p-4 bg-white shadow-sm rounded-xl">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <div className="w-2 h-2 rounded-full bg-primary-500"></div>
                   <span className="text-xs text-gray-600">Resolution Time</span>
                 </div>
                 <div className="text-2xl font-bold text-primary-600">2.5 days</div>
-                <div className="text-xs text-green-600 flex items-center gap-1">
+                <div className="flex items-center gap-1 text-xs text-green-600">
                   <span>↗</span>
                   <span>Faster than average</span>
                 </div>
               </div>
               
-              <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="p-4 bg-white shadow-sm rounded-xl">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                  <div className="w-2 h-2 rounded-full bg-accent-500"></div>
                   <span className="text-xs text-gray-600">Community Impact</span>
                 </div>
                 <div className="text-2xl font-bold text-accent-600">High</div>
@@ -482,9 +482,9 @@ const MobileAppSection = () => {
             </div>
             
             {/* Community Feedback */}
-            <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="p-4 bg-white shadow-sm rounded-xl">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <div className="w-2 h-2 rounded-full bg-secondary-500"></div>
                 <span className="text-sm font-semibold text-gray-700">Community Response</span>
               </div>
               
@@ -517,10 +517,10 @@ const MobileAppSection = () => {
             
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <div className="flex-1 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+              <div className="flex items-center justify-center flex-1 h-10 bg-gray-200 rounded-lg">
                 <span className="text-sm text-gray-500">Report Another</span>
               </div>
-              <div className="flex-1 h-10 bg-gradient-to-r from-accent-500 to-accent-600 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="flex items-center justify-center flex-1 h-10 rounded-lg shadow-lg bg-gradient-to-r from-accent-500 to-accent-600">
                 <span className="text-sm font-semibold text-white">View Analytics</span>
               </div>
             </div>
@@ -623,15 +623,15 @@ const MobileAppSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-24 overflow-hidden relative bg-gradient-to-b from-primary-50/30 to-white">
+    <section ref={sectionRef} className="relative py-24 overflow-hidden bg-gradient-to-b from-primary-50/30 to-white">
       {/* Clean Green Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-primary-100/50 opacity-60 blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-accent-100/50 opacity-60 blur-3xl -z-10"></div>
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-primary-200/40 opacity-50 blur-3xl -z-10"></div>
+      <div className="absolute top-0 left-0 rounded-full w-96 h-96 bg-primary-100/50 opacity-60 blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 rounded-full w-96 h-96 bg-accent-100/50 opacity-60 blur-3xl -z-10"></div>
+      <div className="absolute w-64 h-64 rounded-full opacity-50 top-1/3 right-1/4 bg-primary-200/40 blur-3xl -z-10"></div>
       
       {/* Enhanced 3D particles and effects with perspective */}
       <motion.div 
-        className="absolute inset-0 -z-5 overflow-hidden"
+        className="absolute inset-0 overflow-hidden -z-5 "
         style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -803,9 +803,9 @@ const MobileAppSection = () => {
         ))}
       </motion.div>
       
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         <motion.div 
-          className="text-center mb-20"
+          className="mb-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -828,11 +828,11 @@ const MobileAppSection = () => {
             </span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-            How Our App <span className="text-primary-600 relative">
+          <h2 className="mb-6 text-4xl font-bold leading-tight md:text-5xl text-neutral-900">
+            How Our App <span className="relative text-primary-600">
               Works
               <motion.span 
-                className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"
+                className="absolute left-0 w-full h-1 rounded-full -bottom-2 bg-gradient-to-r from-primary-500 to-accent-500"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -842,7 +842,7 @@ const MobileAppSection = () => {
           </h2>
           
           <motion.p 
-            className="text-neutral-600 max-w-2xl mx-auto text-lg leading-relaxed"
+            className="max-w-2xl mx-auto text-lg leading-relaxed text-neutral-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -852,10 +852,10 @@ const MobileAppSection = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
           {/* Left side: Enhanced Phone mockup */}
           <motion.div 
-            className="flex justify-center relative z-10"
+            className="relative z-10 flex justify-center"
             initial="hidden"
             whileInView="visible"
             whileHover="hover"
@@ -864,7 +864,7 @@ const MobileAppSection = () => {
           >
             <div className="relative">
               {/* Connection lines between phone and steps */}
-              <svg className="absolute inset-0 w-full h-full -z-10 opacity-70 hidden lg:block" viewBox="0 0 400 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute inset-0 hidden w-full h-full -z-10 opacity-70 lg:block" viewBox="0 0 400 650" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <motion.path 
                   d="M320 150 Q 400 150, 450 100" 
                   stroke="#E0E7FF" 
@@ -960,10 +960,10 @@ const MobileAppSection = () => {
                             duration: 0.5 
                           } 
                         }}
-                        className="relative perspective-1000 w-full h-full"
+                        className="relative w-full h-full perspective-1000"
                       >
                         {/* Step navigation buttons */}
-                        <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
+                        <div className="absolute left-0 right-0 z-20 flex justify-center space-x-3 bottom-6">
                           {screens.map((screen, idx) => (
                             <button
                               key={idx}
@@ -984,7 +984,7 @@ const MobileAppSection = () => {
                         
                         {/* App screen content with 3D perspective */}
                         <motion.div 
-                          className="relative w-full h-full z-10"
+                          className="relative z-10 w-full h-full"
                           style={{ transformStyle: "preserve-3d" }}
                           initial={{ opacity: 0, scale: 0.95, z: -20 }}
                           animate={{ 
@@ -1073,7 +1073,7 @@ const MobileAppSection = () => {
                 </motion.div>
                 
                 {/* Enhanced screen indicator dots */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                <div className="absolute flex space-x-3 transform -translate-x-1/2 bottom-4 left-1/2">
                   {screens.map((screen, index) => (
                     <motion.button
                       key={index}
@@ -1115,7 +1115,7 @@ const MobileAppSection = () => {
               
               {/* Clean Green Animated Decorative Elements */}
               <motion.div 
-                className="absolute -bottom-8 -left-8 w-40 h-40 bg-primary-200/60 rounded-full opacity-60 blur-xl -z-10"
+                className="absolute w-40 h-40 rounded-full -bottom-8 -left-8 bg-primary-200/60 opacity-60 blur-xl -z-10"
                 animate={{ 
                   scale: [1, 1.1, 1],
                   opacity: [0.6, 0.8, 0.6],
@@ -1128,7 +1128,7 @@ const MobileAppSection = () => {
                 }}
               />
               <motion.div 
-                className="absolute -top-8 -right-8 w-40 h-40 bg-accent-200/60 rounded-full opacity-60 blur-xl -z-10"
+                className="absolute w-40 h-40 rounded-full -top-8 -right-8 bg-accent-200/60 opacity-60 blur-xl -z-10"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   opacity: [0.6, 0.7, 0.6],
@@ -1144,7 +1144,7 @@ const MobileAppSection = () => {
               
               {/* Floating feature badges */}
               <motion.div
-                className="absolute -left-16 top-1/4 bg-white rounded-lg shadow-lg p-2 flex items-center gap-2 text-sm font-medium"
+                className="absolute z-40 flex items-center gap-2 p-2 text-sm font-medium bg-white rounded-lg shadow-lg -left-16 top-1/4"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ 
                   opacity: 1, 
@@ -1163,14 +1163,14 @@ const MobileAppSection = () => {
                   ease: floatingAnimation.transition.ease as any
                 }}
               >
-                <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-600">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 text-primary-600">
                   <FaCamera />
                 </div>
                 <span className="text-neutral-700">Step 1: Capture</span>
               </motion.div>
               
               <motion.div
-                className="absolute -right-16 top-2/3 bg-white rounded-lg shadow-lg p-2 flex items-center gap-2 text-sm font-medium"
+                className="absolute z-30 flex items-center gap-2 p-2 text-sm font-medium bg-white rounded-lg shadow-lg -right-16 top-2/3"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ 
                   opacity: 1, 
@@ -1189,7 +1189,7 @@ const MobileAppSection = () => {
                   ease: floatingAnimation.transition.ease as any
                 }}
               >
-                <div className="w-8 h-8 rounded-full bg-accent-100 flex items-center justify-center text-accent-600">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-100 text-accent-600">
                   <FaRocket />
                 </div>
                 <span className="text-neutral-700">Step 4: Complete</span>
@@ -1206,7 +1206,7 @@ const MobileAppSection = () => {
             className="space-y-6"
           >
             {/* Process flow connector */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-transparent via-primary-200 to-transparent opacity-50 hidden lg:block" />
+            <div className="absolute hidden w-1 h-full transform -translate-x-1/2 opacity-50 left-1/2 bg-gradient-to-b from-transparent via-primary-200 to-transparent lg:block" />
             
             {screens.map((screen) => (
               <motion.div 
@@ -1223,7 +1223,7 @@ const MobileAppSection = () => {
               >
                 <div className="flex items-start gap-5">
                   <motion.div 
-                    className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 text-white relative"
+                    className="relative flex items-center justify-center text-white rounded-full w-14 h-14 shrink-0"
                     style={{ backgroundColor: screen.color }}
                     whileHover={{ rotate: 10 }}
                     animate={activeScreen === screen.id ? { 
@@ -1252,7 +1252,7 @@ const MobileAppSection = () => {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
                       <motion.span 
-                        className="w-7 h-7 rounded-full text-xs flex items-center justify-center text-white font-bold"
+                        className="flex items-center justify-center text-xs font-bold text-white rounded-full w-7 h-7"
                         style={{ backgroundColor: screen.color }}
                         whileHover={{ scale: 1.1 }}
                         animate={activeScreen === screen.id ? { y: [0, -3, 0] } : {}}
@@ -1276,11 +1276,11 @@ const MobileAppSection = () => {
                       )}
                     </div>
                     
-                    <p className="text-neutral-600 mt-1 leading-relaxed">{screen.description}</p>
+                    <p className="mt-1 leading-relaxed text-neutral-600">{screen.description}</p>
                     
                     {activeScreen === screen.id && (
                       <motion.div
-                        className="mt-3 flex items-center text-sm font-medium"
+                        className="flex items-center mt-3 text-sm font-medium"
                         style={{ color: screen.color }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -1303,10 +1303,10 @@ const MobileAppSection = () => {
             
             <motion.div 
               variants={itemVariants}
-              className="mt-12 flex justify-center"
+              className="flex justify-center mt-12"
             >
               <Button
-                className="group relative overflow-hidden rounded-full px-8 py-6 shadow-lg bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-medium text-lg btn-hover-lift"
+                className="relative px-8 py-6 overflow-hidden text-lg font-medium text-white rounded-full shadow-lg group bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 btn-hover-lift"
                 asChild={true}
                 href="#download"
               >
@@ -1316,7 +1316,7 @@ const MobileAppSection = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-primary-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-primary-700 to-accent-700 group-hover:opacity-100"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
                   />
@@ -1344,7 +1344,7 @@ const MobileAppSection = () => {
                     <span>Download the App</span>
                     
                     <motion.div 
-                      className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="ml-1 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1, repeat: Infinity }}
                     >
@@ -1358,7 +1358,7 @@ const MobileAppSection = () => {
                     whileHover={{ rotate: 180, scale: 1.2 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="bg-gradient-to-r from-primary-500 to-accent-500 text-xs text-white font-bold rounded-full h-8 w-8 flex items-center justify-center">
+                    <div className="flex items-center justify-center w-8 h-8 text-xs font-bold text-white rounded-full bg-gradient-to-r from-primary-500 to-accent-500">
                       <FaStar />
                     </div>
                   </motion.div>

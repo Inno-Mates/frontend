@@ -7,13 +7,13 @@ import { FaApple, FaGooglePlay, FaMobile, FaBell, FaMap, FaCamera } from 'react-
 const AppFeature = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
   <motion.div 
     whileHover={{ y: -5 }}
-    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10"
+    className="flex items-start gap-4 p-4 border rounded-xl bg-white/5 backdrop-blur-lg border-white/10"
   >
-    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-teal-400">
+    <div className="flex items-center justify-center w-10 h-10 text-teal-400 rounded-lg bg-white/10">
       {icon}
     </div>
     <div>
-      <h4 className="font-semibold text-white mb-1">{title}</h4>
+      <h4 className="mb-1 font-semibold text-white">{title}</h4>
       <p className="text-sm text-white/70">{description}</p>
     </div>
   </motion.div>
@@ -47,8 +47,8 @@ const MobileAppSection = () => {
         <div className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[100px] opacity-20"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 px-4 mx-auto">
+        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left content */}
           <div className="space-y-8">
             <motion.div
@@ -58,13 +58,13 @@ const MobileAppSection = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium">
+              <span className="inline-block px-3 py-1 text-sm font-medium text-white rounded-full bg-white/10">
                 Mobile App
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl font-bold text-white md:text-4xl">
                 Take Action on the <span className="text-teal-400">Go</span>
               </h2>
-              <p className="text-white/80 text-lg">
+              <p className="text-lg text-white/80">
                 Download our mobile app to report and track civic issues from anywhere, anytime.
               </p>
             </motion.div>
@@ -104,12 +104,12 @@ const MobileAppSection = () => {
               transition={{ delay: 0.4 }}
               className="space-y-6"
             >
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <motion.a
                   href="#"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center gap-2 px-6 py-3 bg-black rounded-xl text-white hover:bg-gray-900 transition-colors"
+                  className="flex items-center justify-center gap-2 px-6 py-3 text-white transition-colors bg-black rounded-xl hover:bg-gray-900"
                 >
                   <FaApple className="text-2xl" />
                   <div className="text-left">
@@ -122,7 +122,7 @@ const MobileAppSection = () => {
                   href="#"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center gap-2 px-6 py-3 bg-black rounded-xl text-white hover:bg-gray-900 transition-colors"
+                  className="flex items-center justify-center gap-2 px-6 py-3 text-white transition-colors bg-black rounded-xl hover:bg-gray-900"
                 >
                   <FaGooglePlay className="text-2xl" />
                   <div className="text-left">
@@ -142,7 +142,7 @@ const MobileAppSection = () => {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-center text-sm text-gray-600 mt-2">Scan to Download</p>
+                <p className="mt-2 text-sm text-center text-gray-600">Scan to Download</p>
               </div>
             </motion.div>
           </div>
@@ -158,7 +158,7 @@ const MobileAppSection = () => {
             <div className="relative max-w-[300px] mx-auto">
               {/* Phone frame */}
               <div className="relative z-20 bg-black rounded-[3rem] p-4 shadow-2xl">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-3xl"></div>
+                <div className="absolute top-0 w-1/3 -translate-x-1/2 bg-black left-1/2 h-7 rounded-b-3xl"></div>
                 <div className="relative aspect-[9/19.5] rounded-[2.5rem] overflow-hidden bg-white">
                   <Image
                     src="/app-screenshot.png"
@@ -170,18 +170,18 @@ const MobileAppSection = () => {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-24 h-24 bg-teal-400 rounded-full blur-2xl opacity-20 z-40"></div>
-              <div className="absolute bottom-1/4 -left-8 w-32 h-32 bg-blue-400 rounded-full blur-2xl opacity-20 z-40"></div>
+              <div className="absolute z-40 w-24 h-24 transform -translate-y-1/2 bg-teal-400 rounded-full top-1/2 -right-4 blur-2xl opacity-20"></div>
+              <div className="absolute z-40 w-32 h-32 bg-blue-400 rounded-full bottom-1/4 -left-8 blur-2xl opacity-20"></div>
 
               {/* Floating UI elements */}
               <motion.div
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="absolute top-1/4 -right-12 bg-white p-3 rounded-xl shadow-lg w-40 z-30"
+                className="absolute z-30 w-40 p-3 bg-white shadow-lg top-1/4 -right-12 rounded-xl"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-500">
+                  <div className="flex items-center justify-center w-8 h-8 text-green-500 bg-green-100 rounded-full">
                     <FaMobile className="w-4 h-4" />
                   </div>
                   <div className="text-sm">
