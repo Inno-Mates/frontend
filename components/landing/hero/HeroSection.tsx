@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaCamera, FaCheckCircle } from 'react-icons/fa';
 
 const HeroSection = () => {
@@ -16,8 +16,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[url('/patterns/circuit-board.svg')] bg-repeat opacity-20"></div>
       </div>
       
-      <div className="container mx-auto px-4 py-16 sm:py-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 px-4 py-16 mx-auto sm:py-24">
+        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left content */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -39,9 +39,9 @@ const HeroSection = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl"
               >
-                Make Your City <span className="text-[#43A047]">Better</span>, Together
+                Make Your City <span className="text-green-600">Better</span>, Together
               </motion.h1>
             </div>
             
@@ -49,7 +49,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-blue-50 max-w-lg"
+              className="max-w-lg text-lg md:text-xl text-blue-50"
             >
               Report civic issues in seconds, track progress in real-time, and be part of the solution in your community.
             </motion.p>
@@ -58,7 +58,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 pt-2"
+              className="flex flex-col gap-4 pt-2 sm:flex-row"
             >
               <Link href="/report">
                 <motion.button 
@@ -73,9 +73,9 @@ const HeroSection = () => {
               
               <button 
                 onClick={() => setIsVideoModalOpen(true)}
-                className="px-8 py-4 bg-transparent hover:bg-white/10 border-2 border-white rounded-full font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300"
+                className="flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-transparent border-2 border-white rounded-full hover:bg-white/10"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
                 See How It Works
@@ -90,7 +90,7 @@ const HeroSection = () => {
             >
               <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
+                  <div key={i} className="w-10 h-10 overflow-hidden border-2 border-white rounded-full">
                       <Image 
                         src={`/avatars/user-${i}.jpeg`} 
                         alt="Community member" 
@@ -114,15 +114,15 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div className="relative overflow-hidden bg-white shadow-2xl rounded-2xl">
               <div className="absolute top-0 left-0 right-0 h-12 bg-[#F5F7FA] flex items-center px-4 gap-2 z-10">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                <div className="ml-4 text-gray-500 text-sm">City Issue Map</div>
+                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                <div className="ml-4 text-sm text-gray-500">City Issue Map</div>
               </div>
               
-              <div className="pt-12 pb-4 px-4">
+              <div className="px-4 pt-12 pb-4">
                 <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-[#E3F2FD]">
                   <Image 
                     src="/map-placeholder.jpg" 
@@ -133,42 +133,42 @@ const HeroSection = () => {
                   
                   {/* Map pins */}
                   <div className="absolute top-1/4 left-1/3 animate-pulse">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">3</div>
+                    <div className="flex items-center justify-center w-6 h-6 text-xs text-white bg-red-500 rounded-full">3</div>
                     </div>
                   <div className="absolute top-1/2 right-1/4 animate-pulse">
-                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs">5</div>
+                    <div className="flex items-center justify-center w-6 h-6 text-xs text-white bg-orange-500 rounded-full">5</div>
                       </div>
                   <div className="absolute bottom-1/3 left-1/2 animate-pulse">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">2</div>
+                    <div className="flex items-center justify-center w-6 h-6 text-xs text-white bg-green-500 rounded-full">2</div>
                     </div>
                   
                   {/* Issue cards */}
-                  <div className="absolute top-20 right-12 bg-white p-3 rounded-lg shadow-lg w-48">
+                  <div className="absolute w-48 p-3 bg-white rounded-lg shadow-lg top-20 right-12">
                     <div className="flex items-start gap-2">
-                      <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-500">
+                      <div className="flex items-center justify-center w-8 h-8 text-red-500 bg-red-100 rounded-full">
                         <FaCamera className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900 text-sm">Pothole Reported</h4>
+                        <h4 className="text-sm font-medium text-gray-900">Pothole Reported</h4>
                         <p className="text-xs text-gray-500">Main St & 5th Ave</p>
                         <div className="flex items-center gap-1 mt-1 text-xs text-orange-500">
-                          <span className="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+                          <span className="inline-block w-2 h-2 bg-orange-500 rounded-full"></span>
                           In Progress
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-16 left-12 bg-white p-3 rounded-lg shadow-lg w-48">
+                  <div className="absolute w-48 p-3 bg-white rounded-lg shadow-lg bottom-16 left-12">
                     <div className="flex items-start gap-2">
-                      <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-500">
+                      <div className="flex items-center justify-center w-8 h-8 text-green-500 bg-green-100 rounded-full">
                         <FaCheckCircle className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900 text-sm">Graffiti Cleaned</h4>
+                        <h4 className="text-sm font-medium text-gray-900">Graffiti Cleaned</h4>
                         <p className="text-xs text-gray-500">Central Park West</p>
                         <div className="flex items-center gap-1 mt-1 text-xs text-green-500">
-                          <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+                          <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
                           Resolved
                         </div>
                       </div>
@@ -178,16 +178,16 @@ const HeroSection = () => {
                 
                 {/* Stats row */}
                 <div className="grid grid-cols-3 gap-4 mt-4">
-                  <div className="bg-blue-50 p-3 rounded-lg">
-                    <p className="text-xs text-blue-500 font-medium">Reports Today</p>
+                  <div className="p-3 rounded-lg bg-blue-50">
+                    <p className="text-xs font-medium text-blue-500">Reports Today</p>
                     <p className="text-2xl font-bold text-blue-700">24</p>
                       </div>
-                  <div className="bg-green-50 p-3 rounded-lg">
-                    <p className="text-xs text-green-500 font-medium">Resolved</p>
+                  <div className="p-3 rounded-lg bg-green-50">
+                    <p className="text-xs font-medium text-green-500">Resolved</p>
                     <p className="text-2xl font-bold text-green-700">18</p>
                     </div>
-                  <div className="bg-purple-50 p-3 rounded-lg">
-                    <p className="text-xs text-purple-500 font-medium">Avg. Response</p>
+                  <div className="p-3 rounded-lg bg-purple-50">
+                    <p className="text-xs font-medium text-purple-500">Avg. Response</p>
                     <p className="text-2xl font-bold text-purple-700">2.4h</p>
                     </div>
                 </div>
@@ -210,19 +210,19 @@ const HeroSection = () => {
       
       {/* Video modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="relative bg-white rounded-xl overflow-hidden max-w-4xl w-full">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
+          <div className="relative w-full max-w-4xl overflow-hidden bg-white rounded-xl">
             <button 
               onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 text-gray-700 hover:bg-black/20 transition-colors z-10"
+              className="absolute z-10 flex items-center justify-center w-8 h-8 text-gray-700 transition-colors rounded-full top-4 right-4 bg-black/10 hover:bg-black/20"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
-            <div className="aspect-video bg-gray-100">
+            <div className="bg-gray-100 aspect-video">
                 {/* Video embed would go here */}
-              <div className="w-full h-full flex items-center justify-center">
+              <div className="flex items-center justify-center w-full h-full">
                 <p className="text-gray-500">Video demonstration would play here</p>
                   </div>
                 </div>

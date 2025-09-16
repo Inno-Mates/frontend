@@ -96,10 +96,16 @@ h6 {
 }
 
 /* Enhanced text contrast for better readability */
-p,
+/* p,
 span,
 div {
   color: var(--neutral-700);
+} */
+
+p,
+div,
+span:not(.no-color){
+  color: var(--color-neutral-700);
 }
 
 .text-muted {
