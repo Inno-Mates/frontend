@@ -487,7 +487,7 @@ export default function ClientHowItWorksPage() {
                         className="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-green-400 shadow-lg"
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 1 + (index * 0.2), duration: 0.4 }}
+                        // transition={{ delay: 1 + (index * 0.2), duration: 0.4 }}
                         viewport={{ once: true }}
                         animate={{ 
                           scale: [1, 1.2, 1],

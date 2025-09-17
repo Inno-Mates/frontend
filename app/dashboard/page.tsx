@@ -9,9 +9,9 @@ export default function DashboardPage() {
 
   return (
     <div className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-10 min-h-screen">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-6 flex items-center justify-between">
-          <div>
+                  <div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Dashboard</h1>
             <p className="mt-1 text-sm text-gray-600">Switch between User, Government, and Municipal dashboards</p>
           </div>
